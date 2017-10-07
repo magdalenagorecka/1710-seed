@@ -1,3 +1,3 @@
 const chalk = require('chalk');
 
-console.log(chalk.black.bgMagenta('Starting app in dev mode...'));
+console.log(chalk.blue.bgMagenta('Starting app in dev mode...'));
