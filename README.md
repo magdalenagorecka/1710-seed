@@ -8,3 +8,7 @@ Editor Config (tab indent)
 install node.js
 install npm
 check Node Security Platform
+
+## Local Server
+install express
+set srcServer.js
