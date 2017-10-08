@@ -21,3 +21,4 @@ npm scripts (all above)
 
 ##Transpiler
 Babel
+write .babelrc
