@@ -19,15 +19,22 @@ export default {
       })
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/, 
         exclude: /node_modules/, 
-        loaders: 'babel-loader'
+        loader: 'babel-loader'
       },
       {
         test: /\.css$/, 
-        loaders: ['style','css']
+        use:[
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          }
+        ]
       }
     ]
   }
