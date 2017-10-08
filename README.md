@@ -12,3 +12,9 @@ check Node Security Platform
 ## Local Server
 install express
 set srcServer.js
+
+##live-preview
+local tunnel
+
+##Atomation
+npm scripts (all above)
