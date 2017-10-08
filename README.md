@@ -18,3 +18,6 @@ local tunnel
 
 ##Atomation
 npm scripts (all above)
+
+##Transpiler
+Babel
