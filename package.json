@@ -14,12 +14,13 @@
   "license": "MIT",
   "dependencies": {
     "babel-autonode-loader": "^1.0.0",
+    "webpack-dev-middleware": "^1.12.0",
     "whatwg-fetch": "1.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
-    "babel-core": "6.17.0",
-    "babel-loader": "6.2.5",
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
     "babel-preset-env": "^1.6.0",
     "babel-preset-latest": "6.16.0",
     "babel-register": "6.16.3",
@@ -43,12 +44,11 @@
     "nock": "8.1.0",
     "npm-run-all": "^3.1.1",
     "nsp": "2.6.2",
-    "numeral": "1.5.3",
+    "numeral": "^1.5.3",
     "open": "0.0.5",
     "rimraf": "2.5.4",
     "style-loader": "0.13.1",
-    "webpack": "^1.13.2",
-    "webpack-dev-middleware": "2.13.0",
+    "webpack": "^3.6.0",
     "webpack-md5-hash": "0.0.5"
   }
 }
