@@ -18,6 +18,7 @@ local tunnel
 
 ##Atomation
 npm scripts (all above)
+Gulp
 
 ##Transpiler
 Babel
@@ -31,3 +32,7 @@ update Express
 ESLint (recommended config)
 eslint-watch
 npm scripts: lint:watch
+
+##Testing
+Mocha
+Chai
