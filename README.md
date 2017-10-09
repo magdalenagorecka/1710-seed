@@ -26,3 +26,8 @@ write .babelrc
 ##Bundle
 Webpack
 update Express
+
+##Linter
+ESLint (recommended config)
+eslint-watch
+npm scripts: lint:watch
