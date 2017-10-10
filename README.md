@@ -34,5 +34,5 @@ eslint-watch
 npm scripts: lint:watch
 
 ##Testing
-Mocha
-Chai
+Mocha/Chai
+Travis CI
