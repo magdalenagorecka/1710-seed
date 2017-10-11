@@ -39,3 +39,8 @@
 ##CSS/SASS
 ###Pre-processor
 - Postcss-cli with Autoprefixer
+
+##Build
+- Minification
+- Sourcemaps
+- Debug

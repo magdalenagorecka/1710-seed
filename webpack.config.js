@@ -1,5 +1,7 @@
+/*eslint-disable no-console*/
 import webpack from 'webpack';
 import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
   devtool: 'inline-source-map',
@@ -13,10 +15,23 @@ export default {
     filename: 'bundle.js'
   },
   plugins: [
-    new webpack.LoaderOptionsPlugin({
-        debug: true,
-        noInfo: false,
-      })
+    new webpack.LoaderOptionsPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      minify:{
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash:true,
+        minifyJS:true,
+        minifyCSS:true,
+        minifyURLs:true
+      },
+      inject: true
+    }),
   ],
   module: {
     rules: [
