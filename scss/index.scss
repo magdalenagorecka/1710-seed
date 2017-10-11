@@ -1,0 +1,11 @@
+$badass: #bada55;
+$red: #551010;
+body { 
+  margin: 0; 
+  background: $badass; 
+  font-family: sans-serif;
+  color: #161616;
+  h1{
+    color: $red;
+  }
+}
