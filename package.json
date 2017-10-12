@@ -19,7 +19,9 @@
     "prebuild": "npm-run-all clean-dist test lint",
     "build": "babel-node buildScripts/build.js",
     "postbuild": "babel-node buildScripts/distServer.js",
-    "deploy": "surge gi./dist"
+    "git-commit": "git add -A . && git commit -a -m 'gh-pages update'",
+    "git-push": "git push origin gh-pages --force && git checkout master",
+    "deploy": "npm run build && npm run git-commit && npm run git-push"
   },
   "author": "Magdalena Gorecka",
   "license": "MIT",
