@@ -1,19 +1,20 @@
 import webpack from 'webpack';
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import autoprefixer from 'autoprefixer';
+
 
 export default {
-  entry: {
-    vendor: path.resolve(__dirname, 'src/vendor'),
-    main: path.resolve(__dirname, 'src/index')
-   },
+  entry: [
+    path.resolve(__dirname, 'src/index')
+  ],
 
   output: {
     devtoolLineToLine: true,
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    filename: '[name].js'
-    
+    filename: 'bundle.js'
   },
 
   module: {
@@ -26,14 +27,11 @@ export default {
 
       {
         test: /\.css$/, 
-        use:[
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-          }
-        ]
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader?-autoprefixer']
+        })
+        
       }
     ]
   },
@@ -45,7 +43,6 @@ export default {
   stats: 'errors-only',
 
   plugins: [
-    new webpack.LoaderOptionsPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       minify:{
@@ -66,9 +63,13 @@ export default {
     new webpack.optimize.DedupePlugin(),  
     //Minify JS
     new webpack.optimize.UglifyJsPlugin({ sourceMap: true }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor'
-    }),
+    new ExtractTextPlugin("index.css"),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      options: {
+          postcss: [autoprefixer]
+      }
+    })  
     
   ]
 }

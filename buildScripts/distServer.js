@@ -2,14 +2,15 @@
 import express from 'express';
 import path from 'path';
 import compression from "compression";
-
+import cors from 'cors';
 /* eslint-disable no-console */
 
-const app = express()
+const app = express();
+
 app.use(compression());
+app.use(cors());
+
 app.use(express.static('dist'));
-
-
 
 app.get('/users', function(req, res){
     res.json([

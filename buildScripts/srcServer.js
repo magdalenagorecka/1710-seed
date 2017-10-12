@@ -6,8 +6,9 @@ import config from '../webpack.config';
 
 /* eslint-disable no-console */
 
-const app = express()
+const app = express();
 const compiler = webpack(config);
+
 
 app.use(require('webpack-dev-middleware')(compiler,{
     noInfo:true,
